@@ -2,7 +2,7 @@
 //  EndPoint.swift
 //  KuveytTurkAPISwift
 //
-//  Created by Mustafa Tanışır / Kuveyt Türk - BT-Dijital Bankacılık Yazılım Geliştirme on 27.12.2017.
+//  Created by Kuveyt Türk on 27.12.2017.
 //  Copyright © 2017 Kuveyt Türk. All rights reserved.
 //
 
@@ -14,6 +14,7 @@ import p2_OAuth2
  */
 public class EndPoint {
     
+    
     public enum EndPointType {
         case Accounts
         case AccountTransactions
@@ -24,23 +25,23 @@ public class EndPoint {
         case MoneyTransferToIBAN
         case MoneyTransferToAccount
         case MoneyTransferToName
-        case FromATMByQRCode
+        case CashWithdrawalFromATMviaQRCode
         case MoneyTransferToGSM
-        case ToGSMTransactions
-        case MoneyTransferToGSMCancel
-        case Loans
-        case XTMS
-        case ATMS
-        case Banks
-        case BankBranches
-        case FxRates
+        case MoneyTransferToGSMTransactions
+        case MoneyTransferToGSMCanceling
+        case LoanFinanceList
+        case KuveytTurkXTMList
+        case KuveytTurkATMList
+        case BankList
+        case BankBranchList
+        case FXCurrencyRates
         case FxCurrencyList
-        case LoanCalculation
-        case LoanCalculationParameter
-        case LoanInstallments
-        case LoanInfo
+        case LoanFinanceCalculation
+        case LoanFinanceCalculationParameter
+        case LoanFinanceInstallments
+        case LoanFinanceInfo
         case TestCustomerList
-        case KuveytTurkBranches
+        case KuveytTurkBranchList
     }
 }
 

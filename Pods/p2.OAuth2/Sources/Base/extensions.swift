@@ -104,8 +104,6 @@ extension URLRequest {
         }
         else
         {
-            
-            do{
                 let privateKey = try PrivateKey(pemNamed: "private")
                 
                 var content: String? = nil;
@@ -130,9 +128,6 @@ extension URLRequest {
                 
                 setValue("Bearer \(access)", forHTTPHeaderField: "Authorization")
                 setValue(base64String, forHTTPHeaderField: "Signature")
-            }catch {
-                throw OAuth2Error.noAccessToken
-            }
             
         }
         

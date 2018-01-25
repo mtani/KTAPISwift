@@ -8,23 +8,23 @@ PODS:
   - SwiftyRSA/ObjC (1.3.0)
 
 DEPENDENCIES:
-  - p2.OAuth2 (from `https://github.com/mtani/OAuth2`)
+  - p2.OAuth2 (from `https://github.com/kuveytturk/OAuth2`)
 
 EXTERNAL SOURCES:
   p2.OAuth2:
-    :git: https://github.com/mtani/OAuth2
+    :git: https://github.com/kuveytturk/OAuth2
     :submodules: true
 
 CHECKOUT OPTIONS:
   p2.OAuth2:
-    :commit: 0c85fa294add300f2defd314029e726d5d7f6be5
-    :git: https://github.com/mtani/OAuth2
+    :commit: 21c542e8a0adf35a080e9bc9f782368d6731b9c6
+    :git: https://github.com/kuveytturk/OAuth2
     :submodules: true
 
 SPEC CHECKSUMS:
   p2.OAuth2: 57994e7a549d8720cbef31181e08c73afe829d41
   SwiftyRSA: 28e1c9ab1f396fd3001d197ba03e1153b524d155
 
-PODFILE CHECKSUM: 3ecb6a4f26fab5c9d6652efb85487029c10ca603
+PODFILE CHECKSUM: 2db6f4d13e3cd0a0fd1ce69ee2e25eaa3809f898
 
 COCOAPODS: 1.3.1

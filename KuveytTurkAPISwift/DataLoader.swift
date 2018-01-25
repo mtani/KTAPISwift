@@ -2,7 +2,7 @@
 //  DataLoader.swift
 //  KuveytTurkAPISwift
 //
-//  Created by Mustafa Tanışır / Kuveyt Türk - BT-Dijital Bankacılık Yazılım Geliştirme on 26.12.2017.
+//  Created by Kuveyt Türk on 26.12.2017.
 //  Copyright © 2017 Kuveyt Türk. All rights reserved.
 //
 
@@ -162,51 +162,51 @@ public class DataLoader: OAuth2DataLoader {
             return EndPointModel.init(endPointPath: "/prep/v1/transfers/execute", endPointHttpMethod:.POST , isPublicEndPoint: false)
         }
         else if (endPoint == .MoneyTransferToIBAN){
-            return EndPointModel.init(endPointPath: "/prep/v1/transfers/ToIBAN", endPointHttpMethod: .POST, isPublicEndPoint: false)
+            return EndPointModel.init(endPointPath: "/prep/v1/transfers/toIBAN", endPointHttpMethod: .POST, isPublicEndPoint: false)
         }
         else if (endPoint == .MoneyTransferToAccount){
-            return EndPointModel.init(endPointPath: "/prep/v1/transfers/ToAccount", endPointHttpMethod: .POST, isPublicEndPoint: false)
+            return EndPointModel.init(endPointPath: "/prep/v1/transfers/toAccount", endPointHttpMethod: .POST, isPublicEndPoint: false)
         }
         else if (endPoint == .MoneyTransferToName){
-            return EndPointModel.init(endPointPath: "/prep/v1/transfers/ToName", endPointHttpMethod: .POST, isPublicEndPoint: false)
+            return EndPointModel.init(endPointPath: "/prep/v1/transfers/toName", endPointHttpMethod: .POST, isPublicEndPoint: false)
         }
-        else if (endPoint == .FromATMByQRCode){
-            return EndPointModel.init(endPointPath: "/prep/v1/transfers/FromATMByQRCode", endPointHttpMethod: .POST, isPublicEndPoint: false)
+        else if (endPoint == .CashWithdrawalFromATMviaQRCode){
+            return EndPointModel.init(endPointPath: "/prep/v1/transfers/fromATMByQRCode", endPointHttpMethod: .POST, isPublicEndPoint: false)
         }
         else if (endPoint == .MoneyTransferToGSM){
             return EndPointModel.init(endPointPath: "/prep/v1/transfers/toGSM", endPointHttpMethod: .POST, isPublicEndPoint: false)
         }
-        else if(endPoint == .ToGSMTransactions){
+        else if(endPoint == .MoneyTransferToGSMTransactions){
             return EndPointModel.init(endPointPath: "/prep/v1/transfers/toGSM/transactions", endPointHttpMethod: .POST, isPublicEndPoint: false)
         }
-        else if(endPoint == .MoneyTransferToGSMCancel){
+        else if(endPoint == .MoneyTransferToGSMCanceling){
             return EndPointModel.init(endPointPath: "/prep/v1/transfers/toGSM/cancel", endPointHttpMethod: .POST, isPublicEndPoint: false)
         }
-        else if(endPoint == .FxRates){
+        else if(endPoint == .FXCurrencyRates){
             return EndPointModel.init(endPointPath: "/prep/v1/fx/rates", endPointHttpMethod: .GET, isPublicEndPoint: true)
         }
         else if(endPoint == .FxCurrencyList){
             return EndPointModel.init(endPointPath: "/prep/v1/data/fecs", endPointHttpMethod: .GET, isPublicEndPoint: true)
         }
-        else if(endPoint == .KuveytTurkBranches){
+        else if(endPoint == .KuveytTurkBranchList){
             return EndPointModel.init(endPointPath: "/prep/v1/data/branches", endPointHttpMethod:.GET , isPublicEndPoint: true)
         }
-        else if(endPoint == .Banks){
+        else if(endPoint == .BankList){
             return EndPointModel.init(endPointPath: "/prep/v1/data/banks", endPointHttpMethod:.GET , isPublicEndPoint: true)
         }
-        else if(endPoint == .XTMS){
+        else if(endPoint == .KuveytTurkXTMList){
             return EndPointModel.init(endPointPath: "/prep/v1/data/xtms", endPointHttpMethod:.GET , isPublicEndPoint: true)
         }
-        else if(endPoint == .ATMS){
+        else if(endPoint == .KuveytTurkATMList){
             return EndPointModel.init(endPointPath: "/prep/v1/data/atms", endPointHttpMethod:.GET , isPublicEndPoint: true)
         }
-        else if(endPoint == .LoanCalculation){
+        else if(endPoint == .LoanFinanceCalculation){
             return EndPointModel.init(endPointPath: "/prep/v1/calculations/loan", endPointHttpMethod:.GET , isPublicEndPoint: true)
         }
-        else if(endPoint == .LoanCalculationParameter){
+        else if(endPoint == .LoanFinanceCalculationParameter){
             return EndPointModel.init(endPointPath: "/prep/v1/data/loans", endPointHttpMethod:.GET , isPublicEndPoint: true)
         }
-        else if(endPoint == .Loans){
+        else if(endPoint == .LoanFinanceList){
             return EndPointModel.init(endPointPath: "/prep/v1/loans", endPointHttpMethod:.GET , isPublicEndPoint: false)
         }
         else if(endPoint == .TestCustomerList){
@@ -223,13 +223,13 @@ public class DataLoader: OAuth2DataLoader {
      - parameter endpoint:   The endpoint type to call
      */
     func getEndPointModelWith(path: String, endPoint: EndPoint.EndPointType) -> EndPointModel? {
-        if(endPoint == .LoanInstallments){
+        if(endPoint == .LoanFinanceInstallments){
             return EndPointModel.init(endPointPath: path, endPointHttpMethod:.GET , isPublicEndPoint: false)
         }
-        else if(endPoint == .LoanInfo){
+        else if(endPoint == .LoanFinanceInfo){
             return EndPointModel.init(endPointPath: path, endPointHttpMethod:.GET , isPublicEndPoint: false)
         }
-        else if(endPoint == .BankBranches){
+        else if(endPoint == .BankBranchList){
             return EndPointModel.init(endPointPath: path, endPointHttpMethod: .GET, isPublicEndPoint: true)
         }
         else if(endPoint == .Receipt)
@@ -248,7 +248,6 @@ public class DataLoader: OAuth2DataLoader {
     override open func perform(request: URLRequest, callback: @escaping ((OAuth2Response) -> Void)) {
         
         super.perform(request: request, callback: callback)
-        print("Test")
     }
     
 }

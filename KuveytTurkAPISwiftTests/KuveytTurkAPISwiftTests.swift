@@ -2,7 +2,7 @@
 //  KuveytTurkAPISwiftTests.swift
 //  KuveytTurkAPISwiftTests
 //
-//  Created by Mustafa Tanışır / Kuveyt Türk - BT-Dijital Bankacılık Yazılım Geliştirme on 26.12.2017.
+//  Created by Kuveyt Türk on 26.12.2017.
 //  Copyright © 2017 Kuveyt Türk. All rights reserved.
 //
 
@@ -23,16 +23,9 @@ class KuveytTurkAPISwiftTests: XCTestCase {
         "secret_in_body": true,
         ] as OAuth2JSON)
     
-    
-    
+
     override func setUp() {
         super.setUp()
-        
-        
-        //OAuthCodeGrant(settings: )
-        
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     @IBAction func signInEmbedded(_ sender: UIButton?) {
@@ -52,7 +45,7 @@ class KuveytTurkAPISwiftTests: XCTestCase {
         var queryParameters: [String: String]? = ["onlyHasAvailableBalance":"0", "onlyOpen":"1","onlyWithNoBalance":"0","onlyCurrent":"0","sharedWithMultiSignature":"0"]
         
         
-         let requestEndPoint: URLRequest = loader.createMethodRequest(enpoint: .Accounts , oauth2: oauth2, queryParameters: queryParameters);
+        let requestEndPoint: URLRequest = loader.createMethodRequest(enpoint: .Accounts , oauth2: oauth2, parameters: queryParameters)!;
         
         loader.perform(request: requestEndPoint) { response in
             do {
@@ -71,11 +64,11 @@ class KuveytTurkAPISwiftTests: XCTestCase {
         components.host = ConnectionOptions.host
         components.path = "/prep/v1/accounts"
         
-        oauth2.clientConfig.queryParameters = ["onlyHasAvailableBalance":"0", "onlyOpen":"1","onlyWithNoBalance":"0","onlyCurrent":"0","sharedWithMultiSignature":"0"]
+        oauth2.clientConfig.parameters = ["onlyHasAvailableBalance":"0", "onlyOpen":"1","onlyWithNoBalance":"0","onlyCurrent":"0","sharedWithMultiSignature":"0"]
         
         
         var queryItems = [URLQueryItem]()
-        for (key, value) in oauth2.clientConfig.queryParameters! {
+        for (key, value) in oauth2.clientConfig.parameters! {
             queryItems.append(URLQueryItem(name: key, value: value))
         }
         

@@ -253,7 +253,6 @@ public enum OAuth2Error: Error, CustomStringConvertible, Equatable {
 			return "Failed to UTF-8 encode the given string"
 		case .utf8DecodeError:
 			return "Failed to decode given data as a UTF-8 string"
-		
 		case .unauthorizedClient:
 			return "Unauthorized"
 		case .forbidden:
